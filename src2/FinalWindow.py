@@ -33,7 +33,6 @@ def get_weather_forecast():
         selected_parameters.append("Cloud Cover")
 
     # Call the functions from RainProbability and FinalBayesian
-    Calculate_probabilities(target_month, target_hour)
     # Create an instance of Calculate_probabilities
     instance = Calculate_probabilities(target_month, target_hour)
 

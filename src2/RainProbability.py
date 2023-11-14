@@ -5,13 +5,13 @@ from pgmpy.estimators import ParameterEstimator
 from pgmpy.inference import VariableElimination
 from pgmpy.factors.discrete import TabularCPD
 
-file2 = pd.read_csv(r"C:\Users\temug\Desktop\ProgettiPython\Previsionimeteo\src\OpenMeteoTorbole.csv", skiprows=2)
+file2 = pd.read_csv(r"C:\Users\temug\Desktop\ProgettiPython\Previsionimeteo\src2\OpenMeteoTorbole.csv", skiprows=2)
 non_filtered_df = file2.drop(columns =['windspeed_10m (km/h)'])
 temperature_conditions = ['Cold', 'Mild', 'Hot']
 humidity_conditions = ['Low', 'High']
 cloudcover_conditions = ['Clear', 'Cloudy']
 precipitation_conditions = ['None', 'Yes']
-
+ 
 class Calculate_probabilities():
     
     def __init__(self, target_month, target_hour):    
@@ -41,13 +41,10 @@ class Calculate_probabilities():
         df = df.dropna()
         df = df.reset_index(drop=True)
         self.cpd_rain_values = self.conditioned_probability(df)
-        # Create an instance of the Calculate_probabilities class
-        # Replace 'target_month' and 'target_hour' with your actual values
-        instance = Calculate_probabilities(target_month, target_hour)
 
         # Call the calculate_bayesian_network method on the instance
         # Replace 'df' with your actual DataFrame
-        rain_prob = instance.calculate_bayesian_network(self, df)
+        rain_prob = self.calculate_bayesian_network(df)
 
         print(rain_prob)
         
