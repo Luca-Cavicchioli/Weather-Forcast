@@ -1,0 +1,6 @@
+The weather forcasting app needs to have in the same directory the file OpenMeteoTorbole.csv. I decided to work only with one geographical position in Italy for semplicity
+and because the weather is a lot variable. It can be hot and humid and also cold and dry.
+
+When you launch the script decide a date using the calendar and a time using the list of hours. The program will use these informations to filter the dataframe and give a weather prediction about temperature, humidity, cloudcover and the probability of rain calculated with a bayesian model.
+
+The bayesian model considers the dependencies between humidity, temperature, cloudcover and rain.
